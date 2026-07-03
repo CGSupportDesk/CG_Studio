@@ -1,4 +1,5 @@
-import { ChevronRight, Mail } from 'lucide-react'
+import { ChevronRight, Mail, MapPin, Phone } from 'lucide-react'
+import { useEffect } from 'react'
 import type { SVGProps } from 'react'
 import './App.css'
 
@@ -195,6 +196,22 @@ const socials = [
   { label: 'Behance', icon: BehanceIcon, href: 'https://www.behance.net/' },
 ]
 
+const contactChannels = [
+  { label: 'India', value: '+91 90742 94791', href: 'tel:+919074294791' },
+  { label: 'UK', value: '+44 20 4615 3030', href: 'tel:+442046153030' },
+]
+
+const officeLocations = [
+  {
+    label: 'United Kingdom',
+    address: '128 City Road, London, EC1V 2NX, United Kingdom',
+  },
+  {
+    label: 'India',
+    address: 'Pattom, Trivandrum - 695003',
+  },
+]
+
 function BackgroundVideo({ src, fit = 'cover' }: { src: string; fit?: 'cover' | 'contain' }) {
   return (
     <video className={`background-video video-${fit}`} autoPlay loop muted playsInline aria-hidden="true">
@@ -343,7 +360,7 @@ function ServicesSection() {
 
 function CtaSection() {
   return (
-    <section className="cta-section" id="contact">
+    <section className="cta-section">
       <BackgroundVideo src={videos.cta} fit="contain" />
       <div className="cta-text">
         <span className="script-accent cta-accent">Start sharp</span>
@@ -354,14 +371,52 @@ function CtaSection() {
           <span>Move the market.</span>
         </h2>
       </div>
+    </section>
+  )
+}
 
-      <div className="liquid-glass cta-socials" aria-label="Contact links">
-        {socials.map(({ href, icon: Icon, label }) => (
-          <a href={href} key={label} aria-label={label}>
-            <Icon size={22} aria-hidden="true" />
-            <span>{label}</span>
+function ContactDetailsSection() {
+  return (
+    <section className="contact-details-section" id="contact">
+      <div className="liquid-glass cta-contact-panel" aria-label="Closing Gap Studio contact details">
+        <div className="contact-panel-header">
+          <span>Offices in India & UK</span>
+          <strong>Contact</strong>
+        </div>
+
+        <div className="contact-channel-grid">
+          {contactChannels.map(({ href, label, value }) => (
+            <a className="contact-channel" href={href} key={label}>
+              <Phone size={18} aria-hidden="true" />
+              <span>{label}</span>
+              <strong>{value}</strong>
+            </a>
+          ))}
+          <a className="contact-channel contact-channel-wide" href="mailto:info@theclosinggap.net">
+            <Mail size={18} aria-hidden="true" />
+            <span>Email</span>
+            <strong>info@theclosinggap.net</strong>
           </a>
-        ))}
+        </div>
+
+        <div className="office-list" aria-label="Office locations">
+          {officeLocations.map(({ address, label }) => (
+            <div className="office-item" key={label}>
+              <MapPin size={18} aria-hidden="true" />
+              <span>{label}</span>
+              <p>{address}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="contact-social-row" aria-label="Social links">
+          {socials.slice(1).map(({ href, icon: Icon, label }) => (
+            <a href={href} key={label} aria-label={label}>
+              <Icon size={18} aria-hidden="true" />
+              <span>{label}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -429,6 +484,19 @@ function App() {
   const pathname = window.location.pathname.toLowerCase()
   const isGalleryPage = pathname.endsWith('/gallery') || pathname.endsWith('/gallery.html')
 
+  useEffect(() => {
+    if (!window.location.hash) {
+      return
+    }
+
+    const target = document.getElementById(window.location.hash.slice(1))
+    if (!target) {
+      return
+    }
+
+    requestAnimationFrame(() => target.scrollIntoView({ block: 'start', behavior: 'auto' }))
+  }, [isGalleryPage])
+
   if (isGalleryPage) {
     return <GalleryPage />
   }
@@ -441,6 +509,7 @@ function App() {
         <IntroSection />
         <ServicesSection />
         <CtaSection />
+        <ContactDetailsSection />
       </main>
     </div>
   )
