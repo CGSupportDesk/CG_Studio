@@ -145,18 +145,59 @@ const galleryItems = [
 const services = [
   {
     label: 'Logo & Brand Identity',
-    copy: 'A mark, palette and visual language people remember.',
+    copy: 'A mark, palette and visual system that makes your business easier to recognise.',
     video: videos.logo,
   },
   {
     label: 'Websites & Landing Pages',
-    copy: 'Sharp pages that make your brand feel ready to trust.',
+    copy: 'Mobile-first pages with sharper copy, stronger trust signals and layouts built for enquiries.',
     video: videos.poster,
   },
   {
     label: 'Campaign Visual Systems',
-    copy: 'Launch visuals, flyers, banners and social assets with a cleaner brand rhythm.',
+    copy: 'Posters, flyers, banners and social creatives built around one clear message.',
     video: videos.brochure,
+  },
+]
+
+const createGroups = [
+  {
+    title: 'Brand Identity',
+    copy: 'For businesses that need to look established before the first conversation starts.',
+    items: ['Logo design', 'Brand marks', 'Color systems', 'Typography direction', 'Visual guidelines'],
+  },
+  {
+    title: 'Campaign Graphics',
+    copy: 'For offers, events and launches that need a clear hook and a premium look.',
+    items: ['Posters', 'Flyers', 'Brochures', 'Banners', 'Social media creatives'],
+  },
+  {
+    title: 'Web Design',
+    copy: 'For brands that need a site people can understand, trust and act on.',
+    items: ['Landing pages', 'Business websites', 'Portfolio sites', 'Campaign pages', 'Mobile-first layout'],
+  },
+]
+
+const processSteps = [
+  {
+    label: 'Brief',
+    copy: 'We learn the brand, audience, offer, deadline and platform before choosing a direction.',
+  },
+  {
+    label: 'Direction',
+    copy: 'We shape the visual route: mood, typography, color, hierarchy and message.',
+  },
+  {
+    label: 'Design',
+    copy: 'We create polished visuals or pages with enough structure to feel premium and clear.',
+  },
+  {
+    label: 'Refine',
+    copy: 'We tune copy, spacing, contrast and brand rhythm until the work feels ready.',
+  },
+  {
+    label: 'Deliver',
+    copy: 'You receive final artwork, web-ready assets or a launched page built for use.',
   },
 ]
 
@@ -269,6 +310,9 @@ function HeroSection() {
             attention gap
           </h1>
           <span className="script-accent hero-accent">Built to be seen</span>
+          <p className="hero-support">
+            Premium logos, posters, websites and campaign visuals for brands that need to look sharper, faster.
+          </p>
           <SocialIcons mobile />
         </div>
       </div>
@@ -278,8 +322,11 @@ function HeroSection() {
 }
 
 function IntroSection() {
-  const introCopy =
-    'Premium graphic and web design for brands that need sharper visuals, stronger campaigns and websites people remember.'
+  const introCopy = [
+    'Premium graphic and web design for brands that need sharper visuals, stronger campaigns and websites people remember.',
+    'We turn business ideas into visual systems people can read in seconds: logos, posters, campaign creatives and websites that make a brand look ready for attention.',
+    'Every piece is built to feel intentional, from the first social poster to the landing page that turns interest into enquiries.',
+  ]
 
   const textureCopy =
     'Logos, flyers, brochures, banners and websites - designed with one job: make your brand look sharper, faster.'
@@ -300,7 +347,9 @@ function IntroSection() {
             <span className="script-accent intro-accent">Closing Gap</span>
           </div>
           <div className="intro-copy-block">
-            <p>{introCopy}</p>
+            {introCopy.map((copy) => (
+              <p key={copy}>{copy}</p>
+            ))}
           </div>
         </div>
 
@@ -358,6 +407,59 @@ function ServicesSection() {
   )
 }
 
+function ContentDepthSection() {
+  return (
+    <section className="content-depth-section" aria-labelledby="content-depth-title">
+      <div className="site-container content-depth-grid">
+        <div className="content-depth-intro">
+          <span className="section-kicker">What we create</span>
+          <h2 id="content-depth-title">Design assets for every moment your audience meets you.</h2>
+          <p>
+            Closing Gap Studio builds the pieces a growing brand needs day to day: the mark people notice, the
+            poster that stops the scroll, the website that makes the business feel real, and the campaign visuals
+            that keep the message consistent.
+          </p>
+        </div>
+
+        <div className="create-group-list">
+          {createGroups.map(({ copy, items, title }) => (
+            <article className="create-group" key={title}>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+              <ul>
+                {items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="site-container process-block">
+        <div className="process-heading">
+          <span className="section-kicker">How we work</span>
+          <h2>Brief in. Direction out. Design sharpened until it feels ready.</h2>
+          <p>
+            The process stays simple: understand the goal, define the look, build the first direction, refine the
+            details, and deliver files or pages ready to use.
+          </p>
+        </div>
+
+        <div className="process-steps">
+          {processSteps.map(({ copy, label }, index) => (
+            <article className="process-step" key={label}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{label}</h3>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function CtaSection() {
   return (
     <section className="cta-section">
@@ -382,6 +484,10 @@ function ContactDetailsSection() {
         <div className="contact-panel-header">
           <span>Offices in India & UK</span>
           <strong>Contact</strong>
+          <p>
+            Send us your brand name, poster idea, launch offer or website goal. We'll help shape the next step and
+            the right creative direction.
+          </p>
         </div>
 
         <div className="contact-channel-grid">
@@ -508,6 +614,7 @@ function App() {
         <HeroSection />
         <IntroSection />
         <ServicesSection />
+        <ContentDepthSection />
         <CtaSection />
         <ContactDetailsSection />
       </main>
