@@ -1,7 +1,7 @@
 import { writeFile } from 'node:fs/promises'
 
-const siteUrl = 'https://theclosinggap.net'
-const publicPages = ['', 'gallery.html']
+const siteUrl = 'https://cgstudio.theclosinggap.net'
+const publicPages = ['', 'gallery']
 
 const paths = [...publicPages]
 

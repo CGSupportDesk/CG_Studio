@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://theclosinggap.net/sitemap.xml
+Sitemap: https://cgstudio.theclosinggap.net/sitemap.xml
