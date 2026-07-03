@@ -18,7 +18,14 @@ const logoAssets = {
   mark: assetPath('assets/closing-gap/cg-logo-icon.png'),
 }
 
-const navItems = [
+const homeNavItems = [
+  ['Home', '/#home'],
+  ['Studio', '/#studio'],
+  ['Services', '/#services'],
+  ['Contact', '/#contact'],
+]
+
+const galleryNavItems = [
   ['Home', '/#home'],
   ['Studio', '/#studio'],
   ['Services', '/#services'],
@@ -136,19 +143,19 @@ const galleryItems = [
 
 const services = [
   {
-    label: 'Posters & Campaign Creatives',
-    copy: 'High-impact visuals for launches, offers, events and brand awareness.',
-    image: galleryItems[4].image,
+    label: 'Logo & Brand Identity',
+    copy: 'A mark, palette and visual language people remember.',
+    video: videos.logo,
   },
   {
     label: 'Websites & Landing Pages',
-    copy: 'Premium web pages with sharp messaging, clean flow and strong conversion intent.',
-    image: galleryItems[6].image,
+    copy: 'Sharp pages that make your brand feel ready to trust.',
+    video: videos.poster,
   },
   {
-    label: 'Logo & Brand Direction',
-    copy: 'Brand marks, social systems and visual styles that make a business look ready.',
-    image: galleryItems[17].image,
+    label: 'Campaign Visual Systems',
+    copy: 'Launch visuals, flyers, banners and social assets with a cleaner brand rhythm.',
+    video: videos.brochure,
   },
 ]
 
@@ -209,6 +216,8 @@ function SocialIcons({ mobile = false }: { mobile?: boolean }) {
 }
 
 function Header({ currentPage = 'home' }: { currentPage?: 'home' | 'gallery' }) {
+  const navItems = currentPage === 'gallery' ? galleryNavItems : homeNavItems
+
   return (
     <header className="site-header">
       <a className="brand-lockup" href="/#home" aria-label="Closing Gap Studio home">
@@ -256,7 +265,7 @@ function IntroSection() {
     'Premium graphic and web design for brands that need sharper visuals, stronger campaigns and websites people remember.'
 
   const textureCopy =
-    'Logos, posters, flyers, brochures, banners and websites - designed with one job: make your brand look sharper, faster.'
+    'Logos, flyers, brochures, banners and websites - designed with one job: make your brand look sharper, faster.'
 
   return (
     <section className="intro-section" id="studio">
@@ -265,31 +274,17 @@ function IntroSection() {
         <div className="intro-top">
           <div className="intro-title-wrap">
             <h2>
-              Real brands.
+              Hello.
               <br />
-              Real posters.
+              We build the look
               <br />
-              Real recall.
+              that gets remembered.
             </h2>
             <span className="script-accent intro-accent">Closing Gap</span>
           </div>
           <div className="intro-copy-block">
-            <img className="intro-logo" src={logoAssets.full} alt="Closing Gap Studio" />
             <p>{introCopy}</p>
-            <a className="proof-link" href="/gallery">
-              View poster gallery
-              <ChevronRight size={18} aria-hidden="true" />
-            </a>
           </div>
-        </div>
-
-        <div className="poster-proof-strip" aria-label="Recent poster design samples">
-          {galleryItems.slice(15, 19).map((item) => (
-            <a className="poster-proof-card" href="/gallery" key={item.title}>
-              <img src={item.image} alt={item.title} loading="lazy" />
-              <span>{item.category}</span>
-            </a>
-          ))}
         </div>
 
         <div className="decorative-copy" aria-hidden="true">
@@ -312,21 +307,21 @@ function ServicesSection() {
               <em>Creative</em> momentum
             </span>
           </h2>
-          <a className="see-all" href="/gallery">
-            <strong>View</strong>
+          <a className="see-all" href="/#contact">
+            <strong>Start</strong>
             <span>
-              The
+              A
               <br />
-              Work
+              Brief
             </span>
           </a>
         </div>
 
         <div className="service-grid">
-          {services.map(({ copy, image, label }) => (
+          {services.map(({ copy, label, video }) => (
             <article className="liquid-glass service-card" key={label}>
-              <div className="service-video service-image">
-                <img src={image} alt="" loading="lazy" />
+              <div className="service-video">
+                <BackgroundVideo src={video} />
               </div>
               <div className="liquid-glass service-overlay">
                 <div>
