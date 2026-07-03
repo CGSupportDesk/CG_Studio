@@ -140,6 +140,31 @@ const galleryItems = [
     category: 'Real Estate Poster',
     image: assetPath('assets/closing-gap/gallery/poster-21-dr-tech-homes.webp'),
   },
+  {
+    title: 'Woks Grill Biryani Offer',
+    category: 'Food Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-22-woks-grill-biryani.webp'),
+  },
+  {
+    title: "Mother's Kitchen Kerala Meals",
+    category: 'Food Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-23-mothers-kitchen-kerala-meals.webp'),
+  },
+  {
+    title: 'Magic Touch Beauty Salon',
+    category: 'Beauty Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-24-magic-touch-salon.webp'),
+  },
+  {
+    title: 'Romanziya Academy Admissions',
+    category: 'Beauty Academy Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-25-romanziya-academy.webp'),
+  },
+  {
+    title: 'Romanziya Salon Services',
+    category: 'Salon Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-26-romanziya-services.webp'),
+  },
 ]
 
 const services = [
@@ -545,7 +570,7 @@ function GalleryPage() {
             </div>
             <p>
               A selected gallery of posters, flyers and campaign creatives across healthcare, education, sports,
-              jewellery, real estate, lifestyle and service brands.
+              jewellery, food, beauty, real estate, lifestyle and service brands.
             </p>
           </div>
         </section>
