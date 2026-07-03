@@ -319,9 +319,9 @@ function ServicesSection() {
       <div className="site-container">
         <div className="services-heading-row">
           <h2>
-            Built for
+            Creative work
             <span>
-              <em>Creative</em> momentum
+              that <em>moves</em> the market
             </span>
           </h2>
           <a className="see-all" href="/#contact">
