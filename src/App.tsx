@@ -16,7 +16,7 @@ const videos = {
 
 const logoAssets = {
   full: assetPath('assets/closing-gap/cg-logo-transparent.png'),
-  mark: assetPath('assets/closing-gap/cg-logo-icon.png'),
+  mark: assetPath('assets/closing-gap/cg-astronaut-mark-transparent.png'),
 }
 
 const homeNavItems = [

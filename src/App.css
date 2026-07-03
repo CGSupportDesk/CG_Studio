@@ -170,12 +170,10 @@ a {
 }
 
 .brand-lockup img {
-  width: 54px;
-  height: 54px;
-  object-fit: cover;
-  border: 1px solid rgba(239, 244, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.36));
 }
 
 .brand-lockup span {
@@ -1190,9 +1188,8 @@ a {
   }
 
   .brand-lockup img {
-    width: 46px;
-    height: 46px;
-    border-radius: 14px;
+    width: 50px;
+    height: 50px;
   }
 
   .hero-content {
