@@ -730,9 +730,10 @@ a {
 
 .cta-section > .background-video {
   position: relative;
-  aspect-ratio: 16 / 9;
   width: 100%;
-  height: auto;
+  height: clamp(680px, 52vw, 920px);
+  object-fit: cover;
+  object-position: center top;
 }
 
 .contact-details-section {
@@ -747,7 +748,7 @@ a {
 
 .cta-text {
   position: absolute;
-  top: 48%;
+  top: 38%;
   right: 7%;
   z-index: 4;
   width: min(600px, 47%);
@@ -1347,6 +1348,11 @@ a {
   .process-step {
     min-height: auto;
     padding: 20px;
+  }
+
+  .cta-section > .background-video {
+    height: min(72svh, 620px);
+    object-position: 38% top;
   }
 
   .cta-text {
