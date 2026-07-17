@@ -140,6 +140,76 @@ const galleryItems = [
     category: 'Real Estate Poster',
     image: assetPath('assets/closing-gap/gallery/poster-21-dr-tech-homes.webp'),
   },
+  {
+    title: 'Tax Matters Corporate Solutions',
+    category: 'Finance Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-22-tax-matters-corporate-solutions.webp'),
+  },
+  {
+    title: "Mother's Kitchen Lunch Plans",
+    category: 'Food Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-23-mothers-kitchen-lunch-plans.webp'),
+  },
+  {
+    title: 'Goalfoc Music Production Course',
+    category: 'Education Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-24-goalfoc-music-production-course.webp'),
+  },
+  {
+    title: "Dr Ajmal's Aligner Treatment",
+    category: 'Healthcare Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-25-dr-ajmal-aligner-treatment.webp'),
+  },
+  {
+    title: "Mother's Kitchen Mom Approved",
+    category: 'Food Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-26-mothers-kitchen-mom-approved.webp'),
+  },
+  {
+    title: 'Structura Designs',
+    category: 'Architecture Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-27-structura-designs-lines-to-dreams.webp'),
+  },
+  {
+    title: 'Kiora Bridal Elegance',
+    category: 'Jewellery Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-28-kiora-bridal-elegance.webp'),
+  },
+  {
+    title: 'DaMa Cafe Biscoff Waffle',
+    category: 'Food Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-29-dama-cafe-biscoff-waffle.webp'),
+  },
+  {
+    title: 'Prana Regency Hotel Stay',
+    category: 'Hospitality Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-30-prana-regency-hotel-stay.webp'),
+  },
+  {
+    title: 'Romanziya Academy Admissions',
+    category: 'Beauty Academy Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-31-romanziya-academy-admissions.webp'),
+  },
+  {
+    title: 'Woks Grill Biryani Offer',
+    category: 'Food Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-32-woks-grill-biryani-offer.webp'),
+  },
+  {
+    title: 'Goalfoc Music Production Training',
+    category: 'Education Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-33-goalfoc-music-production-training.webp'),
+  },
+  {
+    title: "Mother's Kitchen Kerala Meals",
+    category: 'Food Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-34-mothers-kitchen-kerala-meals.webp'),
+  },
+  {
+    title: 'Romanziya Salon Services',
+    category: 'Beauty Poster',
+    image: assetPath('assets/closing-gap/gallery/poster-35-romanziya-salon-services.webp'),
+  },
 ]
 
 const services = [
@@ -545,7 +615,7 @@ function GalleryPage() {
             </div>
             <p>
               A selected gallery of posters, flyers and campaign creatives across healthcare, education, sports,
-              jewellery, real estate, lifestyle and service brands.
+              jewellery, food, hospitality, finance, real estate, lifestyle and service brands.
             </p>
           </div>
         </section>
