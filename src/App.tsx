@@ -36,11 +36,6 @@ const galleryNavItems = [
 
 const galleryItems = [
   {
-    title: 'Hireability Check Campaign',
-    category: 'Career Poster',
-    image: assetPath('assets/closing-gap/gallery/poster-01-hireability-check.webp'),
-  },
-  {
     title: 'Victors Driving School',
     category: 'Service Poster',
     image: assetPath('assets/closing-gap/gallery/poster-02-victors-confidence.webp'),
